@@ -10,7 +10,7 @@ from StreamingSQL.db import create_connection, execute_command
 from StreamingSQL.fonts import Colors, Formats
 
 """Default configuration to connect to the DB"""
-host = '10.0.0.122'
+host = 'localhost'
 port = 3306
 usr = 'root'
 paswd = ''
