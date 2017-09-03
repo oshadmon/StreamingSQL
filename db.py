@@ -34,7 +34,8 @@ def create_connection(host='localhost', port=3306, user='root', password='', db=
         try:
             conn = pymysql.connect(host=host, port=port, user=user, passwd=password, db=db)
         except pymysql.err.OperationalError as e:
-            print(Formats.BOLD + Colors.RED + "Connection Error: " + str(e) + Formats.END + Colors.END)
+            error = str(e).replace("(", ")").replace('"', '').replace(")", "").replace(",", ":")
+            print(Formats.BOLD + Colors.RED + "Connection Error - " + error + Formats.END + Colors.END)
 
     try:
         return conn.cursor()
